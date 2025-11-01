@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 50%, #ffb3b3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Flower decorations */
+.flower {
+    position: fixed;
+    font-size: 3rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.flower-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.flower-2 { top: 15%; right: 8%; animation-delay: 1s; }
+.flower-3 { bottom: 20%; left: 10%; animation-delay: 2s; }
+.flower-4 { bottom: 15%; right: 5%; animation-delay: 3s; }
+.flower-5 { top: 50%; left: 2%; animation-delay: 1.5s; }
+.flower-6 { top: 45%; right: 3%; animation-delay: 2.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(255, 0, 0, 0.2);
+    border: 3px solid #ff6b6b;
+    position: relative;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '💐';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+.screen {
+    display: none;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+    color: #d63031;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.subtitle {
+    color: #c0392b;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Cake */
+.cake-container {
+    margin: 40px 0;
+    position: relative;
+}
+
+.cake {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 150px;
+}
+
+.cake-top {
+    width: 180px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff9999 0%, #ff6b6b 100%);
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+    border: 2px solid #ff4757;
+}
+
+.cake-middle {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffb3b3 0%, #ff9999 100%);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 2px solid #ff6b6b;
+}
+
+.cake-bottom {
+    width: 220px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffcccc 0%, #ffb3b3 100%);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 2px solid #ff9999;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 10;
+}
+
+.candle {
+    width: 15px;
+    height: 60px;
+    background: linear-gradient(180deg, #fff 0%, #ffcccc 100%);
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #ffb3b3;
+}
+
+.flame {
+    width: 20px;
+    height: 30px;
+    background: radial-gradient(circle, #ffeb3b 0%, #ff9800 50%, #f44336 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.5s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
+
+.flame.extinguished {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    transition: all 0.5s ease-out;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scaleY(1) scaleX(1); }
+    100% { transform: translateX(-50%) scaleY(1.2) scaleX(1.1); }
+}
+
+.candle.extinguished .flame {
+    opacity: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b6b 0%, #d63031 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(214, 48, 49, 0.4);
+    font-family: 'Georgia', serif;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(214, 48, 49, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-next {
+    display: none;
+    margin-top: 20px;
+}
+
+.hint {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.mic-status {
+    display: none; /* Hidden by default, shown when microphone is active */
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.2) 0%, rgba(214, 48, 49, 0.2) 100%);
+    border-radius: 20px;
+    border: 2px solid #ff6b6b;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.mic-status.active {
+    display: flex;
+}
+
+.mic-indicator {
+    font-size: 1.5rem;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+#mic-status-text {
+    color: #d63031;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Music notes */
+.music-notes {
+    margin: 40px 0;
+    font-size: 3rem;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+
+.music-notes .note {
+    display: inline-block;
+    margin: 0 10px;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Letter */
+.letter-container {
+    margin: 40px 0;
+}
+
+.letter-envelope {
+    background: linear-gradient(135deg, #ff6b6b 0%, #d63031 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(214, 48, 49, 0.3);
+    margin-bottom: 30px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.letter-envelope.opened {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.letter-paper {
+    background: #fff8f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.3);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ffb3b3;
+}
+
+.letter-content {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #2d3436;
+    display: none;
+}
+
+.letter-content.revealed {
+    display: block;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter-content h3 {
+    color: #d63031;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    color: #d63031;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Final screen */
+.final-message {
+    color: #c0392b;
+    font-size: 1.8rem;
+    margin: 30px 0;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.blessings {
+    margin-top: 40px;
+    font-size: 3rem;
+}
+
+.blessing {
+    display: inline-block;
+    margin: 0 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.blessing:nth-child(2) { animation-delay: 0.5s; }
+.blessing:nth-child(3) { animation-delay: 1s; }
+.blessing:nth-child(4) { animation-delay: 1.5s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .cake {
+        width: 150px;
+        height: 120px;
+    }
+    
+    .candles {
+        gap: 20px;
+    }
+}

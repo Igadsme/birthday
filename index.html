@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Happy Birthday Cielo ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Flower decorations -->
+        <div class="flower flower-1">🌸</div>
+        <div class="flower flower-2">🌹</div>
+        <div class="flower flower-3">🌺</div>
+        <div class="flower flower-4">🌷</div>
+        <div class="flower flower-5">🌻</div>
+        <div class="flower flower-6">💐</div>
+
+        <!-- Main content -->
+        <div class="content">
+            <!-- Initial greeting -->
+            <div id="greeting-screen" class="screen active">
+                <h1 class="title">Happy Birthday Cielo! ❤️</h1>
+                <p class="subtitle">Blow out the candles to continue...</p>
+                
+                <!-- Birthday cake with candles -->
+                <div class="cake-container">
+                    <div class="cake">
+                        <div class="cake-top"></div>
+                        <div class="cake-middle"></div>
+                        <div class="cake-bottom"></div>
+                    </div>
+                    <div class="candles">
+                        <div class="candle candle-1">
+                            <div class="flame flame-1"></div>
+                        </div>
+                        <div class="candle candle-2">
+                            <div class="flame flame-2"></div>
+                        </div>
+                        <div class="candle candle-3">
+                            <div class="flame flame-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="btn-primary">Click to Start & Blow Candles</button>
+                <p class="hint">Say "blow" or blow into your microphone</p>
+                <div id="mic-status" class="mic-status">
+                    <span class="mic-indicator">🎤</span>
+                    <span id="mic-status-text">Microphone active - blow now!</span>
+                </div>
+            </div>
+
+            <!-- Song screen -->
+            <div id="song-screen" class="screen">
+                <h2 class="title">🎵 Feliz Cumpleaños Cielo! 🎵</h2>
+                <div class="music-notes">
+                    <span class="note">♪</span>
+                    <span class="note">♫</span>
+                    <span class="note">♪</span>
+                    <span class="note">♫</span>
+                </div>
+            </div>
+
+            <!-- Letter screen -->
+            <div id="letter-screen" class="screen">
+                <div class="letter-container">
+                    <div class="letter-envelope" id="envelope">
+                        <div class="letter-paper">
+                            <div class="letter-content" id="letter-content">
+                                <h3>Happy Birthday Cielo ❤️</h3>
+                                <p>Happy birthday Cielo. I hope life has been treating you well and that today brings you genuine happiness. It's been a while, and time has passed, but I still think about you. You'll always have a special place in my heart. Wishing you nothing but growth, joy, and beautiful things ahead.</p>
+                                <div class="signature">With all my love 💕</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="open-letter-btn" class="btn-primary">Open Letter 💌</button>
+                    <button id="next-btn" class="btn-primary btn-next">Continue to Final Wishes →</button>
+                </div>
+            </div>
+
+            <!-- Final wishes screen -->
+            <div id="final-screen" class="screen">
+                <h1 class="title">✨ Happy Year Ahead! ✨</h1>
+                <p class="final-message">May God be with you always,<br>filling your days with love, joy, and endless blessings.</p>
+                <div class="blessings">
+                    <span class="blessing">❤️</span>
+                    <span class="blessing">✨</span>
+                    <span class="blessing">🌹</span>
+                    <span class="blessing">💕</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
