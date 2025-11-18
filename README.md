@@ -10,11 +10,11 @@ A romantic birthday app with interactive candle blowing, music, and personalized
 
 ## 🚀 Deployment Options
 
-### Option 1: Netlify (Easiest - Recommended)
+### Option 1: Netlify 
 
 **Free & Easy Deployment:**
 
-1. Go to [netlify.com](https://www.netlify.com) and sign up (free)
+1. Go to [netlify.com](https://www.netlify.com) and sign up 
 2. Click "Add new site" → "Deploy manually"
 3. Drag and drop your entire `birthday` folder into the deploy area
 4. Your site will be live in seconds!
@@ -23,15 +23,6 @@ A romantic birthday app with interactive candle blowing, music, and personalized
 **Or use Netlify Drop:**
 - Go to [app.netlify.com/drop](https://app.netlify.com/drop)
 - Drag your folder there
-
-### Option 2: GitHub Pages (Free)
-
-1. Create a GitHub account at [github.com](https://github.com)
-2. Create a new repository (name it "birthday-app")
-3. Upload all 3 files (`index.html`, `style.css`, `script.js`)
-4. Go to Settings → Pages
-5. Select "main" branch and "/ (root)" folder
-6. Your site will be at: `https://your-username.github.io/birthday-app/`
 
 ### Option 3: Vercel (Free)
 
